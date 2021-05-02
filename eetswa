@@ -2225,3 +2225,4 @@ function LibMain:AddWindow()
 	end
 	return Tabs
 end
+return LibMain
