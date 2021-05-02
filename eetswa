@@ -1,3 +1,19 @@
+game:GetService("StarterGui").ResetPlayerGuiOnSpawn = false
+
+game:GetService("UserInputService").InputBegan:connect(
+    function(key, gpe)
+        if key.KeyCode == Enum.KeyCode.LeftAlt then
+            pcall(
+                function()
+                    for i, v in pairs(game.CoreGui.Library:GetChildren()) do
+                        v.Visible = not v.Visible
+                    end
+                end
+            )
+        end
+    end
+)
+
 local LibMain = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -102,7 +118,7 @@ end
 
 local Library = Instance.new("ScreenGui")
 Library.Name = "Library"
-Library.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Library.Parent = game.CoreGui
 Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 function LibMain:AddWindow()
@@ -118,6 +134,7 @@ function LibMain:AddWindow()
 	local TabFolder = Instance.new("Folder")
 	local DragFrame = Instance.new("Frame")
 	local CurrentTabText = Instance.new("TextLabel")
+  
 
 	CurrentTabText.Name = "CurrentTabText"
 	CurrentTabText.Parent = Window
@@ -125,7 +142,7 @@ function LibMain:AddWindow()
 	CurrentTabText.BackgroundTransparency = 1.000
 	CurrentTabText.Position = UDim2.new(0.251908392, 0, 0.0101005023, 0)
 	CurrentTabText.Size = UDim2.new(0, 200, 0, 41)
-	CurrentTabText.Font = Enum.Font.SourceSans
+	CurrentTabText.Font = Enum.Font.GothamSemibold
 	CurrentTabText.TextColor3 = Color3.fromRGB(255, 255, 255)
 	CurrentTabText.TextSize = 22.000
 	CurrentTabText.TextXAlignment = Enum.TextXAlignment.Left
@@ -133,7 +150,7 @@ function LibMain:AddWindow()
 
 	Window.Name = "Window"
 	Window.Parent = Library
-	Window.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	Window.BackgroundColor3 = Color3.fromRGB(22,23,27)
 	Window.Position = UDim2.new(0.329166681, 0, 0.30153504, 0)
 	Window.Size = UDim2.new(0, 655, 0, 398)
 
@@ -151,7 +168,7 @@ function LibMain:AddWindow()
 
 	LeftFrame.Name = "LeftFrame"
 	LeftFrame.Parent = Window
-	LeftFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+	LeftFrame.BackgroundColor3 = Color3.fromRGB(32,33,37)
 	LeftFrame.Position = UDim2.new(-0.000604294648, 0, 0, 0)
 	LeftFrame.Size = UDim2.new(0, 157, 0, 398)
 
@@ -161,14 +178,14 @@ function LibMain:AddWindow()
 
 	Title.Name = "Title"
 	Title.Parent = LeftFrame
-	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundColor3 = Color3.fromRGB(139,0,0)
 	Title.BackgroundTransparency = 1.000
-	Title.Position = UDim2.new(0.085999998, 0, 0.0069999984, 0)
+	Title.Position = UDim2.new(0.0680000016, 0, -0.001999984, 0)
 	Title.Size = UDim2.new(0, 67, 0, 50)
-	Title.Font = Enum.Font.SourceSans
-	Title.Text = "Eshay Hub"
-	Title.TextColor3 = Color3.fromRGB(255,255,255)
-	Title.TextSize = 29.000
+	Title.Font = Enum.Font.GothamSemibold
+	Title.Text = "Emperor Hub"
+	Title.TextColor3 = Color3.fromRGB(255,51,51)
+	Title.TextSize = 23
 	Title.TextXAlignment = Enum.TextXAlignment.Left
 
 	TabsText.Name = "TabsText"
@@ -177,10 +194,10 @@ function LibMain:AddWindow()
 	TabsText.BackgroundTransparency = 1.000
 	TabsText.Position = UDim2.new(0.0810999995, 0, 0.0969, 0)
 	TabsText.Size = UDim2.new(0, 67, 0, 25)
-	TabsText.Font = Enum.Font.SourceSans
+	TabsText.Font = Enum.Font.GothamSemibold
 	TabsText.Text = "Tabs"
 	TabsText.TextColor3 = Color3.fromRGB(197, 197, 197)
-	TabsText.TextSize = 15.000
+	TabsText.TextSize = 14.000
 	TabsText.TextXAlignment = Enum.TextXAlignment.Left
 
 	TabHolder.Name = "TabHolder"
@@ -206,9 +223,9 @@ function LibMain:AddWindow()
 		TabBtn.Parent = TabHolder
 		TabBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TabBtn.BackgroundTransparency = 1.000
-		TabBtn.Position = UDim2.new(0.00595744839, 0, 0, 0)
+		TabBtn.Position = UDim2.new(0.0258620698, 0, 0, 0)
 		TabBtn.Size = UDim2.new(0, 116, 0, 35)
-		TabBtn.Font = Enum.Font.SourceSans
+		TabBtn.Font = Enum.Font.GothamSemibold
 		TabBtn.Text = ""
 		TabBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
 		TabBtn.TextSize = 14.000
@@ -226,9 +243,9 @@ function LibMain:AddWindow()
 		TabTitle.Parent = TabBtn
 		TabTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TabTitle.BackgroundTransparency = 1.000
-		TabTitle.Position = UDim2.new(0.275999993, 0, 0.0469999984, 0)
+		TabTitle.Position = UDim2.new(0.0258620698, 0, 0.0469999984, 0)
 		TabTitle.Size = UDim2.new(0, 65, 0, 30)
-		TabTitle.Font = Enum.Font.SourceSansLight
+		TabTitle.Font = Enum.Font.GothamSemibold
 		TabTitle.Text = text
 		TabTitle.TextColor3 = Color3.fromRGB(177,177,177)
 		TabTitle.TextSize = 20.000
@@ -302,7 +319,7 @@ function LibMain:AddWindow()
 
 			Section.Name = "Section"
 			Section.Parent = Tab
-			Section.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+			Section.BackgroundColor3 = Color3.fromRGB(25,25,29)
 			Section.BorderSizePixel = 0
 			Section.Position = UDim2.new(0.253792942, 0, 0.0496056341, 0)
 			Section.Size = UDim2.new(0, 190, 0, 368)
@@ -313,10 +330,10 @@ function LibMain:AddWindow()
 			SectionTitle.BackgroundTransparency = 1.000
 			SectionTitle.Position = UDim2.new(0.0780000016, 0, 0.0439999998, 0)
 			SectionTitle.Size = UDim2.new(0, 67, 0, 22)
-			SectionTitle.Font = Enum.Font.SourceSans
+			SectionTitle.Font = Enum.Font.GothamSemibold
 			SectionTitle.Text = text
 			SectionTitle.TextColor3 = Color3.fromRGB(255,255,255)
-			SectionTitle.TextSize = 19.000
+			SectionTitle.TextSize = 18.000
 			SectionTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 			SectionItemHolder.Name = "SectionItemHolder"
@@ -344,13 +361,13 @@ function LibMain:AddWindow()
 
 				Button.Name = "Button"
 				Button.Parent = SectionItemHolder
-				Button.BackgroundColor3 = Color3.fromRGB(64, 63, 64)
+				Button.BackgroundColor3 = Color3.fromRGB(32,33,37)
 				Button.BorderSizePixel = 0
 				Button.Size = UDim2.new(0, 198, 0, 26)
 				Button.AutoButtonColor = false
-				Button.Font = Enum.Font.SourceSans
+				Button.Font = Enum.Font.GothamSemibold
 				Button.TextColor3 = Color3.fromRGB(255,255,255)
-				Button.TextSize = 15.000
+				Button.TextSize = 14.000
 				Button.ClipsDescendants = true
 				Button.Text = text
 
@@ -373,7 +390,7 @@ function LibMain:AddWindow()
 						TweenService:Create(
 							Button,
 							TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(64, 63, 64)}
+							{BackgroundColor3 = Color3.fromRGB(32,33,37)}
 						):Play()
 					end
 				)
@@ -398,10 +415,12 @@ function LibMain:AddWindow()
 				local ToggleFrameWhiteCorner = Instance.new("UICorner")
 				local ToggleCircle = Instance.new("Frame")
 				local ToggleCircleCorner = Instance.new("UICorner")
+				local ToggleCircle1 = Instance.new("Frame")
+				local ToggleCircle1Corner = Instance.new("UICorner")
 
 				Toggle.Name = "Toggle"
 				Toggle.Parent = SectionItemHolder
-				Toggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+				Toggle.BackgroundColor3 = Color3.fromRGB(32,33,37)
 				Toggle.BorderSizePixel = 0
 				Toggle.Position = UDim2.new(-0.306870222, 0, 1.23869348, 0)
 				Toggle.Size = UDim2.new(0, 198, 0, 26)
@@ -417,17 +436,17 @@ function LibMain:AddWindow()
 				ToggleTitle.BackgroundTransparency = 1.000
 				ToggleTitle.Position = UDim2.new(0, 5, 0, 0)
 				ToggleTitle.Size = UDim2.new(0, 17, 0, 25)
-				ToggleTitle.Font = Enum.Font.SourceSans
+				ToggleTitle.Font = Enum.Font.GothamSemibold
 				ToggleTitle.Text = text
 				ToggleTitle.TextColor3 = Color3.fromRGB(255,255,255)
-				ToggleTitle.TextSize = 15.000
+				ToggleTitle.TextSize = 14.000
 				ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
-				ToggleTitle.TextTransparency = 0.4
+				ToggleTitle.TextTransparency = 0
 
 				ToggleFrame.Name = "ToggleFrame"
 				ToggleFrame.Parent = Toggle
 				ToggleFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-				ToggleFrame.BackgroundColor3 = Color3.fromRGB(235, 234, 235)
+				ToggleFrame.BackgroundColor3 = Color3.fromRGB(25,25,29)
 				ToggleFrame.Position = UDim2.new(0.898024716, 0, 0.461538464, 0)
 				ToggleFrame.Size = UDim2.new(0, 33, 0, 19)
 
@@ -438,7 +457,7 @@ function LibMain:AddWindow()
 				ToggleFrameWhite.Name = "ToggleFrameWhite"
 				ToggleFrameWhite.Parent = ToggleFrame
 				ToggleFrameWhite.AnchorPoint = Vector2.new(0.5, 0.5)
-				ToggleFrameWhite.BackgroundColor3 = Color3.fromRGB(255, 254, 255)
+				ToggleFrameWhite.BackgroundColor3 = Color3.fromRGB(25,25,29)
 				ToggleFrameWhite.LayoutOrder = 2
 				ToggleFrameWhite.Position = UDim2.new(0.514999986, 0, 0.609000027, -2)
 				ToggleFrameWhite.Size = UDim2.new(0, 30, 0, 16)
@@ -450,7 +469,7 @@ function LibMain:AddWindow()
 				ToggleCircle.Name = "ToggleCircle"
 				ToggleCircle.Parent = ToggleFrame
 				ToggleCircle.AnchorPoint = Vector2.new(0.5, 0.5)
-				ToggleCircle.BackgroundColor3 = Color3.fromRGB(235, 234, 235)
+				
 				ToggleCircle.LayoutOrder = 1
 				ToggleCircle.Position = UDim2.new(0.197999999, 0, 0.609000027, -2)
 				ToggleCircle.Size = UDim2.new(0, 17, 0, 17)
@@ -459,14 +478,45 @@ function LibMain:AddWindow()
 				ToggleCircleCorner.Name = "ToggleCircleCorner"
 				ToggleCircleCorner.Parent = ToggleCircle
 
+
+
+					ToggleCircle1.Name = "Toggle1Circle"
+					ToggleCircle1.Parent = ToggleFrame
+					ToggleCircle1.AnchorPoint = Vector2.new(0.5, 0.5)
+					
+					ToggleCircle1.LayoutOrder = 1
+					ToggleCircle1.Position = UDim2.new(0.197999999, 0, 0.609000027, -2)
+					ToggleCircle1.Size = UDim2.new(0, 17, 0, 17)
+					
+					ToggleCircle1Corner.CornerRadius = UDim.new(1, 0)
+					ToggleCircle1Corner.Name = "ToggleCircle1Corner"
+					ToggleCircle1Corner.Parent = ToggleCircle1
+
+spawn(function()
+	while wait() do
+ToggleCircle.BackgroundColor3 = Color3.fromRGB(255,51,51)
+	end
+end)
+
+spawn(function()
+	while wait() do
+ToggleCircle1.BackgroundColor3 = Color3.fromRGB(255,51,51)
+	end
+end)
+
 				Toggle.MouseButton1Click:Connect(
 					function()
 						if Toggled == false then
 							TweenService:Create(
-								ToggleCircle,
-								TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(101, 97, 214)}
-							):Play()
+									ToggleCircle1,
+									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+									{BackgroundTransparency = 0}
+								):Play()
+								TweenService:Create(
+									ToggleCircle,
+									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+									{BackgroundTransparency = 1}
+								):Play()
 							TweenService:Create(
 								ToggleTitle,
 								TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
@@ -475,12 +525,12 @@ function LibMain:AddWindow()
 							TweenService:Create(
 								ToggleFrameWhite,
 								TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(229, 227, 255)}
+								{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 							):Play()
 							TweenService:Create(
 								ToggleFrame,
 								TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(229, 227, 255)}
+								{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 							):Play()
 							ToggleCircle:TweenPosition(
 								UDim2.new(0.688, 0, 0.609000027, -2),
@@ -489,28 +539,47 @@ function LibMain:AddWindow()
 								0.2,
 								true
 							)
+							ToggleCircle1:TweenPosition(
+								UDim2.new(0.688, 0, 0.609000027, -2),
+								Enum.EasingDirection.Out,
+								Enum.EasingStyle.Quart,
+								0.2,
+								true
+							)
 						else
 							TweenService:Create(
-								ToggleCircle,
-								TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(235, 234, 235)}
-							):Play()
+									ToggleCircle1,
+									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+									{BackgroundTransparency = 1}
+								):Play()
+								TweenService:Create(
+									ToggleCircle,
+									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+									{BackgroundTransparency = 0}
+								):Play()
 							TweenService:Create(
 								ToggleTitle,
 								TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{TextTransparency = 0.4}
+								{TextTransparency = 0}
 							):Play()
 							TweenService:Create(
 								ToggleFrameWhite,
 								TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(255, 254, 255)}
+								{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 							):Play()
 							TweenService:Create(
 								ToggleFrame,
 								TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(235, 234, 235)}
+								{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 							):Play()
 							ToggleCircle:TweenPosition(
+								UDim2.new(0.197999999, 0, 0.609000027, -2),
+								Enum.EasingDirection.Out,
+								Enum.EasingStyle.Quart,
+								0.2,
+								true
+							)
+							ToggleCircle1:TweenPosition(
 								UDim2.new(0.197999999, 0, 0.609000027, -2),
 								Enum.EasingDirection.Out,
 								Enum.EasingStyle.Quart,
@@ -536,7 +605,7 @@ function LibMain:AddWindow()
 
 				Slider.Name = "Slider"
 				Slider.Parent = SectionItemHolder
-				Slider.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+				Slider.BackgroundColor3 = Color3.fromRGB(32,33,37)
 				Slider.BorderSizePixel = 0
 				Slider.Position = UDim2.new(0.422900766, 0, 1.18090463, 0)
 				Slider.Size = UDim2.new(0, 198, 0, 45)
@@ -552,15 +621,15 @@ function LibMain:AddWindow()
 				SliderTitle.BackgroundTransparency = 1.000
 				SliderTitle.Position = UDim2.new(0, 5, 0, 0)
 				SliderTitle.Size = UDim2.new(0, 17, 0, 25)
-				SliderTitle.Font = Enum.Font.SourceSans
+				SliderTitle.Font = Enum.Font.GothamSemibold
 				SliderTitle.Text = text
 				SliderTitle.TextColor3 = Color3.fromRGB(255,255,255)
-				SliderTitle.TextSize = 15.000
+				SliderTitle.TextSize = 14.000
 				SliderTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 				SlideFrame.Name = "SlideFrame"
 				SlideFrame.Parent = Slider
-				SlideFrame.BackgroundColor3 = Color3.fromRGB(235, 234, 235)
+				SlideFrame.BackgroundColor3 = Color3.fromRGB(25,25,29)
 				SlideFrame.BorderSizePixel = 0
 				SlideFrame.Position = UDim2.new(0.0439362712, 0, 0.646098614, 0)
 				SlideFrame.Size = UDim2.new(0, 182, 0, 3)
@@ -587,11 +656,19 @@ function LibMain:AddWindow()
 				Value.BackgroundTransparency = 1.000
 				Value.Position = UDim2.new(0, 176, 0, 0)
 				Value.Size = UDim2.new(0, 17, 0, 25)
-				Value.Font = Enum.Font.SourceSans
+				Value.Font = Enum.Font.GothamSemibold
 				Value.Text = min
 				Value.TextColor3 = Color3.fromRGB(255,255,255)
 				Value.TextSize = 16.000
 				Value.TextXAlignment = Enum.TextXAlignment.Right
+
+spawn(function()
+	while wait() do
+SlideCircle.ImageColor3 = Color3.fromRGB(255,51,51)
+CurrentValueFrame.BackgroundColor3 = Color3.fromHSV(tick() % 4 / 4, 0.5, 1)
+SlideFrame.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	end
+end)
 
 				local function move(input)
 					local pos =
@@ -651,15 +728,15 @@ function LibMain:AddWindow()
 
 				Dropdown.Name = "Dropdown"
 				Dropdown.Parent = SectionItemHolder
-				Dropdown.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+				Dropdown.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 				Dropdown.BorderSizePixel = 0
 				Dropdown.Position = UDim2.new(-0.311450362, 0, 0.595477402, 0)
 				Dropdown.Size = UDim2.new(0, 198, 0, 26)
 				Dropdown.AutoButtonColor = false
-				Dropdown.Font = Enum.Font.SourceSans
+				Dropdown.Font = Enum.Font.GothamSemibold
 				Dropdown.Text = ""
 				Dropdown.TextColor3 = Color3.fromRGB(0, 0, 0)
-				Dropdown.TextSize = 15.000
+				Dropdown.TextSize = 14.000
 
 				DropdownCorner.CornerRadius = UDim.new(0, 6)
 				DropdownCorner.Name = "ItemCorner"
@@ -671,10 +748,10 @@ function LibMain:AddWindow()
 				DropdownTitle.BackgroundTransparency = 1.000
 				DropdownTitle.Position = UDim2.new(0, 5, 0, 0)
 				DropdownTitle.Size = UDim2.new(0, 17, 0, 25)
-				DropdownTitle.Font = Enum.Font.SourceSans
+				DropdownTitle.Font = Enum.Font.GothamSemibold
 				DropdownTitle.Text = text
 				DropdownTitle.TextColor3 = Color3.fromRGB(255,255,255)
-				DropdownTitle.TextSize = 15.000
+				DropdownTitle.TextSize = 14.000
 				DropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 				Arrow.Name = "Arrow"
@@ -692,7 +769,7 @@ function LibMain:AddWindow()
 				DropdownFrame.Name = "DropdownFrame"
 				DropdownFrame.Parent = SectionItemHolder
 				DropdownFrame.Active = true
-				DropdownFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+				DropdownFrame.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 				DropdownFrame.BorderSizePixel = 0
 				DropdownFrame.Position = UDim2.new(0, 0, 0.448387086, 0)
 				DropdownFrame.Size = UDim2.new(0, 203, 0, 0)
@@ -775,10 +852,10 @@ function LibMain:AddWindow()
 				for i, v in next, list do
 					ItemCount = ItemCount + 1
 
-					if ItemCount <= 2 then
+					if ItemCount <= 5 then
 						FrameSize = FrameSize + 26
-					elseif ItemCount >= 3 then
-						FrameSize = 78
+					elseif ItemCount >= 6 then
+						FrameSize = 156
 					end
 
 					local Item = Instance.new("TextButton")
@@ -786,14 +863,14 @@ function LibMain:AddWindow()
 
 					Item.Name = "Item"
 					Item.Parent = DropdownFrame
-					Item.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+					Item.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
 					Item.BorderSizePixel = 0
 					Item.Position = UDim2.new(-0.233587787, 0, 0.934673369, 0)
 					Item.Size = UDim2.new(0, 198, 0, 26)
 					Item.AutoButtonColor = false
-					Item.Font = Enum.Font.SourceSans
+					Item.Font = Enum.Font.GothamSemibold
 					Item.TextColor3 = Color3.fromRGB(255,255,255)
-					Item.TextSize = 15.000
+					Item.TextSize = 14.000
 					Item.Text = v
 
 					ItemCorner.CornerRadius = UDim.new(0, 6)
@@ -862,22 +939,27 @@ function LibMain:AddWindow()
 			end
 
 			function SectionContent:AddLabel(text)
+				local labelfunc = {}
 				local Label = Instance.new("TextButton")
 
 				Label.Name = "Button"
 				Label.Parent = SectionItemHolder
-				Label.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+				Label.BackgroundColor3 = Color3.fromRGB(25,25,29)
 				Label.BorderSizePixel = 0
 				Label.Size = UDim2.new(0, 198, 0, 26)
 				Label.AutoButtonColor = false
-				Label.Font = Enum.Font.SourceSans
+				Label.Font = Enum.Font.GothamSemibold
 				Label.TextColor3 = Color3.fromRGB(255,255,255)
-				Label.TextSize = 15.000
+				Label.TextSize = 14.000
 				Label.ClipsDescendants = true
 				Label.Text = text
 				SectionItemHolder.CanvasSize = UDim2.new(0, 0, 0, SectionHolderList.AbsoluteContentSize.Y)
+                                        function labelfunc:Change(tochange)
+                                        Label.Text = tochange
+                                        end
+                                        return labelfunc
 			end
-
+			
 			function SectionContent:AddColorpicker(text, preset, callback)
 				local ColorPickerToggled = false
 				local OldToggleColor = Color3.fromRGB(0, 0, 0)
@@ -1228,7 +1310,7 @@ function LibMain:AddWindow()
 
 				Folder.Name = "Folder"
 				Folder.Parent = SectionItemHolder
-				Folder.BackgroundColor3 = Color3.fromRGB(50,50,50)
+				Folder.BackgroundColor3 = Color3.fromRGB(32,33,37)
 				Folder.BorderSizePixel = 0
 				Folder.Position = UDim2.new(-0.311450392, 0, 0.655778944, 0)
 				Folder.Size = UDim2.new(0, 198, 0, 24)
@@ -1236,15 +1318,15 @@ function LibMain:AddWindow()
 
 				FolderBtn.Name = "FolderBtn"
 				FolderBtn.Parent = Folder
-				FolderBtn.BackgroundColor3 = Color3.fromRGB(50,50,50)
+				FolderBtn.BackgroundColor3 = Color3.fromRGB(32,33,37)
 				FolderBtn.BorderSizePixel = 0
 				FolderBtn.Position = UDim2.new(-0.00280837063, 0, 0, 0)
 				FolderBtn.Size = UDim2.new(0, 162, 0, 24)
 				FolderBtn.AutoButtonColor = false
-				FolderBtn.Font = Enum.Font.SourceSans
+				FolderBtn.Font = Enum.Font.GothamSemibold
 				FolderBtn.Text = ""
 				FolderBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-				FolderBtn.TextSize = 15.000
+				FolderBtn.TextSize = 14.000
 
 				FolderTitle.Name = "FolderTitle"
 				FolderTitle.Parent = FolderBtn
@@ -1252,10 +1334,10 @@ function LibMain:AddWindow()
 				FolderTitle.BackgroundTransparency = 1.000
 				FolderTitle.Position = UDim2.new(0.00280837063, 0, 0, 0)
 				FolderTitle.Size = UDim2.new(0, 197, 0, 25)
-				FolderTitle.Font = Enum.Font.SourceSans
+				FolderTitle.Font = Enum.Font.GothamSemibold
 				FolderTitle.Text = text
 				FolderTitle.TextColor3 = Color3.fromRGB(255,255,255)
-				FolderTitle.TextSize = 15.000
+				FolderTitle.TextSize = 14.000
 
 				Icon.Name = "Icon"
 				Icon.Parent = FolderBtn
@@ -1268,7 +1350,7 @@ function LibMain:AddWindow()
 
 				FolderHolder.Name = "FolderHolder"
 				FolderHolder.Parent = FolderBtn
-				FolderHolder.BackgroundColor3 = Color3.fromRGB(50,50,50)
+				FolderHolder.BackgroundColor3 = Color3.fromRGB(32,33,37)
 				FolderHolder.BackgroundTransparency = 1.000
 				FolderHolder.Position = UDim2.new(0, 0, 1.16666663, 0)
 				FolderHolder.Size = UDim2.new(0, 162, 0, 0)
@@ -1328,13 +1410,13 @@ function LibMain:AddWindow()
 
 					Button.Name = "Button"
 					Button.Parent = FolderHolder
-					Button.BackgroundColor3 = Color3.fromRGB(64,63,64)
+					Button.BackgroundColor3 = Color3.fromRGB(32,33,37)
 					Button.BorderSizePixel = 0
 					Button.Size = UDim2.new(0, 198, 0, 26)
 					Button.AutoButtonColor = false
-					Button.Font = Enum.Font.SourceSans
+					Button.Font = Enum.Font.GothamSemibold
 					Button.TextColor3 = Color3.fromRGB(255,255,255)
-					Button.TextSize = 15.000
+					Button.TextSize = 14.000
 					Button.ClipsDescendants = true
 					Button.Text = text
 
@@ -1357,7 +1439,7 @@ function LibMain:AddWindow()
 							TweenService:Create(
 								Button,
 								TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{BackgroundColor3 = Color3.fromRGB(64,63,64)}
+								{BackgroundColor3 = Color3.fromRGB(32,33,37)}
 							):Play()
 						end
 					)
@@ -1380,18 +1462,21 @@ function LibMain:AddWindow()
 					local ToggleFrameWhiteCorner = Instance.new("UICorner")
 					local ToggleCircle = Instance.new("Frame")
 					local ToggleCircleCorner = Instance.new("UICorner")
+					local ToggleCircle1 = Instance.new("Frame")
+					local ToggleCircle1Corner = Instance.new("UICorner")
+
 
 					Toggle.Name = "Toggle"
 					Toggle.Parent = FolderHolder
-					Toggle.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					Toggle.BackgroundColor3 = Color3.fromRGB(32,33,37)
 					Toggle.BorderSizePixel = 0
 					Toggle.Position = UDim2.new(-0.306870222, 0, 1.23869348, 0)
 					Toggle.Size = UDim2.new(0, 198, 0, 26)
 					Toggle.AutoButtonColor = false
-					Toggle.Font = Enum.Font.SourceSans
+					Toggle.Font = Enum.Font.GothamSemibold
 					Toggle.Text = ""
 					Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-					Toggle.TextSize = 15.000
+					Toggle.TextSize = 14.000
 
 					ToggleTitle.Name = "ToggleTitle"
 					ToggleTitle.Parent = Toggle
@@ -1399,10 +1484,10 @@ function LibMain:AddWindow()
 					ToggleTitle.BackgroundTransparency = 1.000
 					ToggleTitle.Position = UDim2.new(0, 5, 0, 0)
 					ToggleTitle.Size = UDim2.new(0, 17, 0, 25)
-					ToggleTitle.Font = Enum.Font.SourceSans
+					ToggleTitle.Font = Enum.Font.GothamSemibold
 					ToggleTitle.Text = text
 					ToggleTitle.TextColor3 = Color3.fromRGB(255,255,255)
-					ToggleTitle.TextSize = 15.000
+					ToggleTitle.TextSize = 14.000
 					ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
 					ToggleTitle.TextTransparency = 0.4
 
@@ -1441,13 +1526,38 @@ function LibMain:AddWindow()
 					ToggleCircleCorner.Name = "ToggleCircleCorner"
 					ToggleCircleCorner.Parent = ToggleCircle
 
+					ToggleCircle1.Name = "Toggle1Circle"
+					ToggleCircle1.Parent = ToggleFrame
+					ToggleCircle1.AnchorPoint = Vector2.new(0.5, 0.5)
+					ToggleCircle1.BackgroundColor3 = Color3.fromRGB(235, 234, 235)
+					ToggleCircle1.LayoutOrder = 1
+					ToggleCircle1.Position = UDim2.new(0.197999999, 0, 0.609000027, -2)
+					ToggleCircle1.Size = UDim2.new(0, 17, 0, 17)
+
+					ToggleCircle1Corner.CornerRadius = UDim.new(1, 0)
+					ToggleCircle1Corner.Name = "ToggleCircle1Corner"
+					ToggleCircle1Corner.Parent = ToggleCircle1
+
+spawn(function()
+	while wait() do
+ToggleCircle1.BackgroundColor3 = Color3.fromRGB(103, 103, 103)
+	end
+end)
+
+
+
 					Toggle.MouseButton1Click:Connect(
 						function()
 							if Toggled == false then
 								TweenService:Create(
+									ToggleCircle1,
+									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+									{BackgroundTransparency = 0}
+								):Play()
+								TweenService:Create(
 									ToggleCircle,
 									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-									{BackgroundColor3 = Color3.fromRGB(101, 97, 214)}
+									{BackgroundTransparency = 1}
 								):Play()
 								TweenService:Create(
 									ToggleTitle,
@@ -1471,11 +1581,23 @@ function LibMain:AddWindow()
 									0.2,
 									true
 								)
+								ToggleCircle1:TweenPosition(
+									UDim2.new(0.688, 0, 0.609000027, -2),
+									Enum.EasingDirection.Out,
+									Enum.EasingStyle.Quart,
+									0.2,
+									true
+								)
 							else
+								TweenService:Create(
+									ToggleCircle1,
+									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+									{BackgroundTransparency = 1}
+								):Play()
 								TweenService:Create(
 									ToggleCircle,
 									TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-									{BackgroundColor3 = Color3.fromRGB(235, 234, 235)}
+									{BackgroundTransparency = 0}
 								):Play()
 								TweenService:Create(
 									ToggleTitle,
@@ -1493,6 +1615,13 @@ function LibMain:AddWindow()
 									{BackgroundColor3 = Color3.fromRGB(235, 234, 235)}
 								):Play()
 								ToggleCircle:TweenPosition(
+									UDim2.new(0.197999999, 0, 0.609000027, -2),
+									Enum.EasingDirection.Out,
+									Enum.EasingStyle.Quart,
+									0.2,
+									true
+								)
+								ToggleCircle1:TweenPosition(
 									UDim2.new(0.197999999, 0, 0.609000027, -2),
 									Enum.EasingDirection.Out,
 									Enum.EasingStyle.Quart,
@@ -1517,15 +1646,15 @@ function LibMain:AddWindow()
 
 					Slider.Name = "Slider"
 					Slider.Parent = FolderHolder
-					Slider.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					Slider.BackgroundColor3 = Color3.fromRGB(32,33,37)
 					Slider.BorderSizePixel = 0
 					Slider.Position = UDim2.new(0.422900766, 0, 1.18090463, 0)
 					Slider.Size = UDim2.new(0, 198, 0, 45)
 					Slider.AutoButtonColor = false
-					Slider.Font = Enum.Font.SourceSans
+					Slider.Font = Enum.Font.GothamSemibold
 					Slider.Text = ""
 					Slider.TextColor3 = Color3.fromRGB(0, 0, 0)
-					Slider.TextSize = 15.000
+					Slider.TextSize = 14.000
 
 					SliderTitle.Name = "SliderTitle"
 					SliderTitle.Parent = Slider
@@ -1533,10 +1662,10 @@ function LibMain:AddWindow()
 					SliderTitle.BackgroundTransparency = 1.000
 					SliderTitle.Position = UDim2.new(0, 5, 0, 0)
 					SliderTitle.Size = UDim2.new(0, 17, 0, 25)
-					SliderTitle.Font = Enum.Font.SourceSans
+					SliderTitle.Font = Enum.Font.GothamSemibold
 					SliderTitle.Text = text
 					SliderTitle.TextColor3 = Color3.fromRGB(255,255,255)
-					SliderTitle.TextSize = 15.000
+					SliderTitle.TextSize = 14.000
 					SliderTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 					SlideFrame.Name = "SlideFrame"
@@ -1568,11 +1697,19 @@ function LibMain:AddWindow()
 					Value.BackgroundTransparency = 1.000
 					Value.Position = UDim2.new(0, 176, 0, 0)
 					Value.Size = UDim2.new(0, 17, 0, 25)
-					Value.Font = Enum.Font.SourceSans
+					Value.Font = Enum.Font.GothamSemibold
 					Value.Text = min
 					Value.TextColor3 = Color3.fromRGB(255,255,255)
-					Value.TextSize = 16.000
+					Value.TextSize = 15.000
 					Value.TextXAlignment = Enum.TextXAlignment.Right
+
+spawn(function()
+	while wait() do
+SlideCircle.ImageColor3 = Color3.fromRGB(103,103,103)
+CurrentValueFrame.BackgroundColor3 = Color3.fromHSV(tick() % 4 / 4, 0.5, 1)
+	end
+end)
+
 
 					local function move(input)
 						local pos =
@@ -1638,15 +1775,15 @@ function LibMain:AddWindow()
 
 					Dropdown.Name = "Dropdown"
 					Dropdown.Parent = FolderHolder
-					Dropdown.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					Dropdown.BackgroundColor3 = Color3.fromRGB(25,25,29)
 					Dropdown.BorderSizePixel = 0
 					Dropdown.Position = UDim2.new(-0.311450362, 0, 0.595477402, 0)
 					Dropdown.Size = UDim2.new(0, 198, 0, 26)
 					Dropdown.AutoButtonColor = false
-					Dropdown.Font = Enum.Font.SourceSans
+					Dropdown.Font = Enum.Font.GothamSemibold
 					Dropdown.Text = ""
 					Dropdown.TextColor3 = Color3.fromRGB(0, 0, 0)
-					Dropdown.TextSize = 15.000
+					Dropdown.TextSize = 14.000
 
 					DropdownCorner.CornerRadius = UDim.new(0, 6)
 					DropdownCorner.Name = "ItemCorner"
@@ -1658,10 +1795,10 @@ function LibMain:AddWindow()
 					DropdownTitle.BackgroundTransparency = 1.000
 					DropdownTitle.Position = UDim2.new(0, 5, 0, 0)
 					DropdownTitle.Size = UDim2.new(0, 17, 0, 25)
-					DropdownTitle.Font = Enum.Font.SourceSans
+					DropdownTitle.Font = Enum.Font.GothamSemibold
 					DropdownTitle.Text = text
 					DropdownTitle.TextColor3 = Color3.fromRGB(255,255,255)
-					DropdownTitle.TextSize = 15.000
+					DropdownTitle.TextSize = 14.000
 					DropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 					Arrow.Name = "Arrow"
@@ -1679,7 +1816,7 @@ function LibMain:AddWindow()
 					DropdownFrame.Name = "DropdownFrame"
 					DropdownFrame.Parent = FolderHolder
 					DropdownFrame.Active = true
-					DropdownFrame.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					DropdownFrame.BackgroundColor3 = Color3.fromRGB(25,25,29)
 					DropdownFrame.BorderSizePixel = 0
 					DropdownFrame.Position = UDim2.new(0, 0, 0.448387086, 0)
 					DropdownFrame.Size = UDim2.new(0, 203, 0, 0)
@@ -1738,7 +1875,7 @@ function LibMain:AddWindow()
 								TweenService:Create(
 									Dropdown,
 									TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-									{BackgroundColor3 = Color3.fromRGB(50,50,50)}
+									{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 								):Play()
 								TweenService:Create(
 									Arrow,
@@ -1782,9 +1919,9 @@ function LibMain:AddWindow()
 						Item.Position = UDim2.new(-0.233587787, 0, 0.934673369, 0)
 						Item.Size = UDim2.new(0, 198, 0, 26)
 						Item.AutoButtonColor = false
-						Item.Font = Enum.Font.SourceSans
+						Item.Font = Enum.Font.GothamSemibold
 						Item.TextColor3 = Color3.fromRGB(255,255,255)
-						Item.TextSize = 15.000
+						Item.TextSize = 14.000
 						Item.Text = v
 
 						ItemCorner.CornerRadius = UDim.new(0, 6)
@@ -1806,7 +1943,7 @@ function LibMain:AddWindow()
 								TweenService:Create(
 									Item,
 									TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-									{BackgroundColor3 = Color3.fromRGB(50,50,50)}
+									{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 								):Play()
 							end
 						)
@@ -1824,7 +1961,7 @@ function LibMain:AddWindow()
 								TweenService:Create(
 									Dropdown,
 									TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-									{BackgroundColor3 = Color3.fromRGB(50,50,50)}
+									{BackgroundColor3 = Color3.fromRGB(25,25,29)}
 								):Play()
 								Current = v
 								DropdownTitle.Text = text
@@ -1857,13 +1994,13 @@ function LibMain:AddWindow()
 
 					Label.Name = "Button"
 					Label.Parent = FolderHolder
-					Label.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					Label.BackgroundColor3 = Color3.fromRGB(25,25,29)
 					Label.BorderSizePixel = 0
 					Label.Size = UDim2.new(0, 198, 0, 26)
 					Label.AutoButtonColor = false
-					Label.Font = Enum.Font.SourceSans
+					Label.Font = Enum.Font.GothamSemibold
 					Label.TextColor3 = Color3.fromRGB(255,255,255)
-					Label.TextSize = 15.000
+					Label.TextSize = 14.000
 					Label.ClipsDescendants = true
 					Label.Text = text
 				end
@@ -1887,7 +2024,7 @@ function LibMain:AddWindow()
 
 					Colorpicker.Name = "Colorpicker"
 					Colorpicker.Parent = FolderHolder
-					Colorpicker.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					Colorpicker.BackgroundColor3 = Color3.fromRGB(25,25,29)
 					Colorpicker.BorderSizePixel = 0
 					Colorpicker.Position = UDim2.new(-0.306870222, 0, 1.23869348, 0)
 					Colorpicker.Size = UDim2.new(0, 198, 0, 26)
@@ -1934,7 +2071,7 @@ function LibMain:AddWindow()
 					ColorpickerFrame.Name = "ColorpickerFrame"
 					ColorpickerFrame.Parent = FolderHolder
 					ColorpickerFrame.Active = true
-					ColorpickerFrame.BackgroundColor3 = Color3.fromRGB(50,50,50)
+					ColorpickerFrame.BackgroundColor3 = Color3.fromRGB(25,25,29)
 					ColorpickerFrame.BorderSizePixel = 0
 					ColorpickerFrame.Position = UDim2.new(-0.384732813, 0, 0.362425059, 0)
 					ColorpickerFrame.Size = UDim2.new(0, 198, 0, 0)
