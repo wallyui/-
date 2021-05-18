@@ -576,7 +576,8 @@ arrow_drop_down2.ImageRectSize = Vector2.new(36, 36)
 local UIPadding = Instance.new("UIPadding")
 
 UIPadding.Parent = arrow_drop_down2
-UIPadding.PaddingLeft = UDim.new(0, 5)
+UIPadding.PaddingLeft = UDim.new(0, 20) 
+--Dropdown Padding
 
 DropdownBacking.Name = "DropdownBacking"
 DropdownBacking.Parent = SectionInsides
