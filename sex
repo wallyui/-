@@ -568,12 +568,15 @@ arrow_drop_down2.Name = "arrow_drop_down"
 arrow_drop_down2.Parent = Dropdown
 arrow_drop_down2.BackgroundTransparency = 1.000
 arrow_drop_down2.Position = UDim2.new(0.979253113, -25, 0.454545438, -12)
-arrow_drop_down2.Size = UDim2.new(0, 20, 0, 20)
+arrow_drop_down2.Size = UDim2.new(0, 25, 0, 25)
 arrow_drop_down2.ZIndex = 2
 arrow_drop_down2.Image = "rbxassetid://3926307971"
 arrow_drop_down2.ImageRectOffset = Vector2.new(324, 524)
 arrow_drop_down2.ImageRectSize = Vector2.new(36, 36)
+local UIPadding = Instance.new("UIPadding")
 
+UIPadding.Parent = arrow_drop_down2
+UIPadding.PaddingLeft = UDim.new(0, 5)
 
 DropdownBacking.Name = "DropdownBacking"
 DropdownBacking.Parent = SectionInsides
