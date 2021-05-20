@@ -22,7 +22,7 @@ ScreenGui.Name = "UI-SERIAL/PEZ/"..math.random(100,999).."/"..math.random(100,99
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame.Position = UDim2.new(0.102202646, 0, 0.622991323, 0)
+Frame.Position = UDim2.new()
 Frame.Size = UDim2.new(0, 392, 0, 260)
 Frame.Active = true
 
