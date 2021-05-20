@@ -675,6 +675,12 @@ function Assets:Label(text)
     TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextLabel.TextSize = 14.000
     TextLabel.TextWrapped = true
+    
+    function labelfunc:Change(tochange)
+    TextLabel.Text = tochange
+    end
+    return labelfunc
+    end
     SectionInsides.Size = UDim2.new(0, 249, 0, SectionListLayout.AbsoluteContentSize.Y +6)
 end
 
