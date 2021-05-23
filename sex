@@ -22,7 +22,7 @@ ScreenGui.Name = "UI-SERIAL/PEZ/"..math.random(100,999).."/"..math.random(100,99
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame.Position = UDim2.new(0.329166681, 0, 0.30153504, 0)
+Frame.Position = UDim2.new(0.102202646, 0, 0.622991323, 0)
 Frame.Size = UDim2.new(0, 392, 0, 260)
 Frame.Active = true
 
@@ -567,7 +567,7 @@ UIPadding.PaddingLeft = UDim.new(0, 5)
 arrow_drop_down2.Name = "arrow_drop_down"
 arrow_drop_down2.Parent = Dropdown
 arrow_drop_down2.BackgroundTransparency = 1.000
-arrow_drop_down2.Position = UDim2.new(1, -25, 0.454545438, -12)
+arrow_drop_down2.Position = UDim2.new(0.979253113, -25, 0.454545438, -12)
 arrow_drop_down2.Size = UDim2.new(0, 25, 0, 25)
 arrow_drop_down2.ZIndex = 2
 arrow_drop_down2.Image = "rbxassetid://3926307971"
@@ -633,7 +633,7 @@ DropButton.Name = "DropButton"
 DropButton.Parent = Dropdown_2
 DropButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 DropButton.Position = UDim2.new(0.0228215773, 0, 0.0599999987, 0)
-DropButton.Size = UDim2.new(0, 230, 0, 17)
+DropButton.Size = UDim2.new(0, 230, 0, 24)
 DropButton.AutoButtonColor = false
 DropButton.Font = Enum.Font.SourceSans
 DropButton.Text = v
@@ -676,10 +676,11 @@ function Assets:Label(text)
     TextLabel.TextSize = 14.000
     TextLabel.TextWrapped = true
     SectionInsides.Size = UDim2.new(0, 249, 0, SectionListLayout.AbsoluteContentSize.Y +6)
-    function labelfunc:Change(tochange)
-        TextLabel.Text = tochange
+    control={}
+    function control:Update(text)
+        TextLabel.Text = text
     end
-    return labelfunc
+    return control
 end
 
 function Assets:Bind(Text, keypreset, callback)
