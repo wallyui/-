@@ -630,7 +630,7 @@ local DropButton = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local UIPadding_2 = Instance.new("UIPadding")
 if track==6 then 
-    for i=1,3 do
+    for i=1,6 do
     DropButton.Name = "DropButton"
     DropButton.Parent = Dropdown_2
     DropButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
