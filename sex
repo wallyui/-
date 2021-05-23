@@ -634,7 +634,7 @@ DropButton.Name = "DropButton"
 DropButton.Parent = Dropdown_2
 DropButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 DropButton.Position = UDim2.new(0.0228215773, 0, 0.0599999987, 0)
-DropButton.Size = UDim2.new(0, 230, 0, 17)
+DropButton.Size = UDim2.new(0, 230, 0, 15)
 DropButton.AutoButtonColor = false
 DropButton.Font = Enum.Font.SourceSans
 DropButton.Text = v
@@ -662,26 +662,7 @@ function()
 end)
 Dropdown_2.CanvasSize = UDim2.new(0, 0, 0, DropperLayoutas.AbsoluteContentSize.Y +11)
 end
-if track==6 then 
-    for i=1,2 do
-local DropButton = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local UIPadding_2 = Instance.new("UIPadding")
-    DropButton.Name = "DropButton"
-    DropButton.Parent = Dropdown_2
-    DropButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-    DropButton.Position = UDim2.new(0.0228215773, 0, 0.0599999987, 0)
-    DropButton.Size = UDim2.new(0, 230, 0, 17)
-    DropButton.AutoButtonColor = false
-    DropButton.Font = Enum.Font.SourceSans
-    DropButton.Text = ""
-    DropButton.BackgroundTransparency=1
-    DropButton.TextColor3 = Color3.fromRGB(208, 208, 208)
-    DropButton.TextSize = 14.000
-    DropButton.TextXAlignment = Enum.TextXAlignment.Left
-    Dropdown_2.CanvasSize = UDim2.new(0, 0, 0, DropperLayoutas.AbsoluteContentSize.Y +11)
-    end
-end
+
 end
 
 function Assets:Label(text)
