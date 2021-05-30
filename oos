@@ -648,7 +648,7 @@ game.TweenService:Create(Toggle, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enu
 }):Play()
 end
 
-function assets:Dropdown(title,list,callback)
+function assets:(title,list,callback)
 
 local Dropdown = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
