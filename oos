@@ -39,7 +39,7 @@
     TextLabel_2.Position = UDim2.new(0.108041219, 0, 0.551999986, 0)
     TextLabel_2.Size = UDim2.new(0, 100, 0, 9)
     TextLabel_2.Font = Enum.Font.Gotham
-    TextLabel_2.Text = "V1"
+    TextLabel_2.Text = "V2"
     TextLabel_2.TextColor3 = Color3.fromRGB(205, 205, 205)
     TextLabel_2.TextSize = 15.000
     TextLabel_2.TextWrapped = true
@@ -78,7 +78,7 @@ FPSLabel.BackgroundTransparency = 1.000
 FPSLabel.Position = UDim2.new(-0.00268030656, 0, 0, 0)
 FPSLabel.Size = UDim2.new(0, 238, 0, 25)
 FPSLabel.Font = Enum.Font.Code
-FPSLabel.Text = " emperor-ware | V1 | Fetching FPS.."
+FPSLabel.Text = " emperor-ware | V2 | Fetching FPS.."
 FPSLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 FPSLabel.TextSize = 15.000
 FPSLabel.TextStrokeTransparency = 0.000
