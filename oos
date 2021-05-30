@@ -783,7 +783,6 @@ return assets
 end
 return AssetHandler
 end
-end
 return sys
 end
 return library
