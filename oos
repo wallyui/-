@@ -573,7 +573,7 @@ UIPadding.PaddingLeft = UDim.new(0, 9)
 
 OutlineFrame.Name = "OutlineFrame"
 OutlineFrame.Parent = Toggle
-OutlineFrame.BackgroundColor3 = Color3.fromRGB(135, 135, 135)
+OutlineFrame.BackgroundColor3 = Color3.fromRGB(255,255,255)
 OutlineFrame.Position = UDim2.new(0.924473166, 0, 0.180555537, 0)
 OutlineFrame.Size = UDim2.new(0, 15, 0, 15)
 
