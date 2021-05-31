@@ -718,6 +718,9 @@ expand_more.ImageRectSize = Vector2.new(36, 36)
 
 Dropdown_2.MouseButton1Click:Connect(function()
 if on then
+	game.TweenService:Create(Dropdown, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+		BackgroundTransparency=1
+	}):Play()
 	game.TweenService:Create(expand_more, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Rotation=0
 	}):Play()
@@ -742,7 +745,11 @@ if on then
 	}):Play()
 
 else
+	
 	Dropdown.Visible=true
+	game.TweenService:Create(Dropdown, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+		BackgroundTransparency=0
+	}):Play()
 	game.TweenService:Create(expand_more, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Rotation=180
 	}):Play()
@@ -791,6 +798,9 @@ UIPadding_2.PaddingLeft = UDim.new(0, 6)
 Dropdown.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y+6)
 
 DropdownButton.MouseButton1Click:Connect(function()
+	game.TweenService:Create(Dropdown, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+		BackgroundTransparency=1
+	}):Play()
 	game.TweenService:Create(expand_more, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Rotation=0
 	}):Play()
