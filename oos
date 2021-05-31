@@ -173,7 +173,7 @@ ScreenGui.Parent = game.CoreGui
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 Frame.ClipsDescendants = true
-Frame.Position = UDim2.new(0.188714147, 0, 0.296662539, 0)
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 Frame.Size = UDim2.new(0, 0, 0, 354)
 Frame.Active=true
 Frame.Draggable=true
@@ -799,9 +799,7 @@ end)
 count=0
 for i, v in next, list do
 count=count+1
-if count < 8 then
 	Dropdown.Size=UDim2.new(0, 339,0, UIListLayout.AbsoluteContentSize.Y+4)
-	
 	local DropdownButton = Instance.new("TextButton")
 	local UICorner = Instance.new("UICorner")
 local UIPadding_2 = Instance.new("UIPadding")
@@ -855,63 +853,6 @@ game.TweenService:Create(DropdownButton,TweenInfo.new(.3, Enum.EasingStyle.Quad,
 TextColor3 = Color3.fromRGB(255, 182, 113)
 }):Play()
 end)
-elseif count>7 then
-		Dropdown.Size=UDim2.new(0, 339,0, 205)
-	
-	local DropdownButton = Instance.new("TextButton")
-	local UICorner = Instance.new("UICorner")
-local UIPadding_2 = Instance.new("UIPadding")
-	DropdownButton.Name = "DropdownButton"
-DropdownButton.Parent = Dropdown
-DropdownButton.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
-DropdownButton.Position = UDim2.new(0.0147492625, 0, 0.024630541, 0)
-DropdownButton.Size = UDim2.new(0, 321, 0, 24)
-DropdownButton.AutoButtonColor = false
-DropdownButton.Font = Enum.Font.Gotham
-DropdownButton.Text = v
-DropdownButton.TextColor3 = Color3.fromRGB(238, 238, 238)
-DropdownButton.TextSize = 12.000
-DropdownButton.TextXAlignment = Enum.TextXAlignment.Left
-UICorner.CornerRadius = UDim.new(0, 2)
-
-UICorner.Parent = DropdownButton
-
-UIPadding_2.Parent = DropdownButton
-UIPadding_2.PaddingLeft = UDim.new(0, 6)
-Dropdown.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y+6)
-
-DropdownButton.MouseButton1Click:Connect(function()
-	game.TweenService:Create(expand_more, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		Rotation=0
-	}):Play()
-	game.TweenService:Create(Dropdown, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		Size=UDim2.new(0, 339,0, 205)
-	}):Play()
-	wait(0.2)
-	Dropdown_2.Text = title .. ": " ..v
-callback(v)
-	game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
-	}):Play()
-	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
-	}):Play()
-	Dropdown.Visible=false
-on=false
-
-
-for i,v in pairs(Dropdown:GetChildren()) do
-if v:IsA('TextButton') then
-game.TweenService:Create(v,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{
-TextColor3 = Color3.fromRGB(238, 238, 238)
-}):Play()
-end
-end
-game.TweenService:Create(DropdownButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{
-TextColor3 = Color3.fromRGB(255, 182, 113)
-}):Play()
-end)
-end
 end
 
 end
@@ -964,7 +905,7 @@ function assets:Slider(text, minvalue, maxvalue, callback)
 	SliderAsset.Size = UDim2.new(0, 339, 0, 37)
 	SliderAsset.AutoButtonColor = false
 	SliderAsset.Font = Enum.Font.Gotham
-	SliderAsset.Text = "Walkspeed"
+	SliderAsset.Text = text
 	SliderAsset.TextColor3 = Color3.fromRGB(213, 213, 213)
 	SliderAsset.TextSize = 14.000
 	SliderAsset.TextXAlignment = Enum.TextXAlignment.Left
