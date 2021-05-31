@@ -26,7 +26,7 @@
     TextLabel.Size = UDim2.new(0, 120, 0, 23)
     TextLabel.Font = Enum.Font.Gotham
     TextLabel.Text = "emperor-ware"
-    TextLabel.TextColor3 = Color3.fromRGB(210, 43, 43)
+    TextLabel.TextColor3 = Color3.fromRGB(230, 138, 0)
     TextLabel.TextSize = 21.000
     TextLabel.TextWrapped = true
     TextLabel.TextScaled = true
@@ -91,7 +91,7 @@ TopBar.Size = UDim2.new(0, FPSLabel.TextBounds.X+6, 0, 2)
 
 TopBar.Name = "TopBar"
 TopBar.Parent = Main
-TopBar.BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+TopBar.BackgroundColor3 = Color3.fromRGB(230, 138, 0)
 TopBar.BorderSizePixel = 0
 TopBar.Size = UDim2.new(0, 0, 0, 2)
 game.TweenService:Create(Main, TweenInfo.new(0.7, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
@@ -208,7 +208,7 @@ Title.Position = UDim2.new(0.0121212117, 0, 0.0225988701, 0)
 Title.Size = UDim2.new(0, 136, 0, 14)
 Title.Font = Enum.Font.Gotham
 Title.Text = title
-Title.TextColor3 = Color3.fromRGB(210, 43, 43)
+Title.TextColor3 = Color3.fromRGB(213, 116, 36)
 Title.TextSize = 18.000
 Title.TextWrapped = true
 Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -291,7 +291,7 @@ TabFolder.Parent = Frame
 
 		SideLine.Name = "SideLine"
 		SideLine.Parent = Tab
-		SideLine.BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+		SideLine.BackgroundColor3 = Color3.fromRGB(213, 116, 36)
 		SideLine.BackgroundTransparency = 1.000
 		SideLine.Position = UDim2.new(-0.111428618, 0, 0, 0)
 		SideLine.Size = UDim2.new(0, 4, 0, 25)
@@ -372,7 +372,7 @@ local ArrowDrop = Instance.new("ImageButton")
 
 Section.Name = "Section"
 Section.Parent = TabFrame
-Section.BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+Section.BackgroundColor3 = Color3.fromRGB(213, 116, 36)
 Section.Position = UDim2.new(0, 0, 0.287037045, 0)
 Section.Size = UDim2.new(0, 339, 0, 24)
 Section.AutoButtonColor = false
@@ -573,7 +573,7 @@ UIPadding.PaddingLeft = UDim.new(0, 9)
 
 OutlineFrame.Name = "OutlineFrame"
 OutlineFrame.Parent = Toggle
-OutlineFrame.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+OutlineFrame.BackgroundColor3 = Color3.fromRGB(135, 135, 135)
 OutlineFrame.Position = UDim2.new(0.924473166, 0, 0.180555537, 0)
 OutlineFrame.Size = UDim2.new(0, 15, 0, 15)
 
@@ -593,13 +593,13 @@ on=false
 do
 if state then
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(135,135,135)
+		BackgroundColor3 = Color3.fromRGB(224, 158, 58)
 	}):Play()
 	game.TweenService:Create(check, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		ImageTransparency = 0
 	}):Play()
 	game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+		BackgroundColor3 = Color3.fromRGB(230, 138, 0)
 	}):Play()
 on=true
 callback(on)
@@ -621,10 +621,10 @@ on=false
 callback(on)
 else
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(135,135,135)
+		BackgroundColor3 = Color3.fromRGB(224, 158, 58)
 	}):Play()
 	game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+		BackgroundColor3 = Color3.fromRGB(230, 138, 0)
 		
 	}):Play()
 	game.TweenService:Create(check, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
@@ -655,7 +655,7 @@ function control:Click()
 			BackgroundColor3 = Color3.fromRGB(224, 158, 58)
 		}):Play()
 		game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-			BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+			BackgroundColor3 = Color3.fromRGB(230, 138, 0)
 			
 		}):Play()
 		game.TweenService:Create(check, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
@@ -935,7 +935,7 @@ function assets:Slider(text, minvalue, maxvalue, callback)
 	
 	SlideFrame.Name = "SliderFrame"
 	SlideFrame.Parent = Slider
-	SlideFrame.BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+	SlideFrame.BackgroundColor3 = Color3.fromRGB(213, 116, 36)
 	SlideFrame.BorderSizePixel = 0
 	SlideFrame.Size = UDim2.new(0, 0, 0, 5)
 	
