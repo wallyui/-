@@ -208,7 +208,7 @@ Title.Position = UDim2.new(0.0121212117, 0, 0.0225988701, 0)
 Title.Size = UDim2.new(0, 136, 0, 14)
 Title.Font = Enum.Font.Gotham
 Title.Text = title
-Title.TextColor3 = Color3.fromRGB(213, 116, 36)
+Title.TextColor3 = Color3.fromRGB(238, 75, 43)
 Title.TextSize = 18.000
 Title.TextWrapped = true
 Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -291,7 +291,7 @@ TabFolder.Parent = Frame
 
 		SideLine.Name = "SideLine"
 		SideLine.Parent = Tab
-		SideLine.BackgroundColor3 = Color3.fromRGB(213, 116, 36)
+		SideLine.BackgroundColor3 = Color3.fromRGB(238, 75, 43)
 		SideLine.BackgroundTransparency = 1.000
 		SideLine.Position = UDim2.new(-0.111428618, 0, 0, 0)
 		SideLine.Size = UDim2.new(0, 4, 0, 25)
@@ -372,7 +372,7 @@ local ArrowDrop = Instance.new("ImageButton")
 
 Section.Name = "Section"
 Section.Parent = TabFrame
-Section.BackgroundColor3 = Color3.fromRGB(213, 116, 36)
+Section.BackgroundColor3 = Color3.fromRGB(238, 75, 43)
 Section.Position = UDim2.new(0, 0, 0.287037045, 0)
 Section.Size = UDim2.new(0, 339, 0, 24)
 Section.AutoButtonColor = false
@@ -593,7 +593,7 @@ on=false
 do
 if state then
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(238, 75, 43)
+		BackgroundColor3 = Color3.fromRGB(224, 158, 58)
 	}):Play()
 	game.TweenService:Create(check, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		ImageTransparency = 0
@@ -621,7 +621,7 @@ on=false
 callback(on)
 else
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(238, 75, 43)
+		BackgroundColor3 = Color3.fromRGB(224, 158, 58)
 	}):Play()
 	game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		BackgroundColor3 = Color3.fromRGB(230, 138, 0)
@@ -652,7 +652,7 @@ function control:Click()
 	callback(on)
 	else
 		game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-			BackgroundColor3 = Color3.fromRGB(238, 75, 43)
+			BackgroundColor3 = Color3.fromRGB(224, 158, 58)
 		}):Play()
 		game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 			BackgroundColor3 = Color3.fromRGB(230, 138, 0)
@@ -935,7 +935,7 @@ function assets:Slider(text, minvalue, maxvalue, callback)
 	
 	SlideFrame.Name = "SliderFrame"
 	SlideFrame.Parent = Slider
-	SlideFrame.BackgroundColor3 = Color3.fromRGB(213, 116, 36)
+	SlideFrame.BackgroundColor3 = Color3.fromRGB(238, 75, 43)
 	SlideFrame.BorderSizePixel = 0
 	SlideFrame.Size = UDim2.new(0, 0, 0, 5)
 	
