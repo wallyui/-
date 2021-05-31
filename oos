@@ -799,9 +799,9 @@ end)
 count=0
 for i, v in next, list do
 count=count+1
-if count <8 then
+if count < 8 then
 	game.TweenService:Create(Dropdown, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-	Size=UDim2.new(0, 339,0, UIListLayout.AbsoluteContentSize.Y+10)
+	Size=UDim2.new(0, 339,0, UIListLayout.AbsoluteContentSize.Y+4)
 	}):Play()
 	
 	local DropdownButton = Instance.new("TextButton")
@@ -857,7 +857,7 @@ game.TweenService:Create(DropdownButton,TweenInfo.new(.3, Enum.EasingStyle.Quad,
 TextColor3 = Color3.fromRGB(255, 182, 113)
 }):Play()
 end)
-else
+elseif count>7 then
 	game.TweenService:Create(Dropdown, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Size=UDim2.new(0, 339,0, 205)
 	}):Play()
