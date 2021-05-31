@@ -1058,7 +1058,7 @@ function assets:Slider(text, minvalue, maxvalue, callback)
 				end)
 			end)
 end
-function assets:Textbox(title,value2,placeholder,callback)
+function assets:Textbox(title,value2,callback)
 
 local Box = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -1098,7 +1098,6 @@ TextBox.ClearTextOnFocus = false
 TextBox.Font = Enum.Font.SourceSans
 TextBox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
 TextBox.Text = ""
-TextBox.Placeholder=placeholder
 TextBox.TextColor3 = Color3.fromRGB(178, 178, 178)
 TextBox.TextSize = 12.000
 TextBox.TextWrapped = true
