@@ -593,7 +593,7 @@ on=false
 do
 if state then
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(224, 158, 58)
+		BackgroundColor3 = Color3.fromRGB(238, 75, 43)
 	}):Play()
 	game.TweenService:Create(check, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		ImageTransparency = 0
@@ -621,7 +621,7 @@ on=false
 callback(on)
 else
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(224, 158, 58)
+		BackgroundColor3 = Color3.fromRGB(238, 75, 43)
 	}):Play()
 	game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		BackgroundColor3 = Color3.fromRGB(230, 138, 0)
@@ -652,7 +652,7 @@ function control:Click()
 	callback(on)
 	else
 		game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-			BackgroundColor3 = Color3.fromRGB(224, 158, 58)
+			BackgroundColor3 = Color3.fromRGB(238, 75, 43)
 		}):Play()
 		game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 			BackgroundColor3 = Color3.fromRGB(230, 138, 0)
