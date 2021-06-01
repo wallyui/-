@@ -84,7 +84,7 @@ FPSLabel.TextSize = 15.000
 FPSLabel.TextStrokeTransparency = 0.000
 FPSLabel.TextXAlignment = Enum.TextXAlignment.Left
 
-FPSLabel.Size = UDim2.new(0, FPSLabel.TextBounds.X+10, 0, 25)
+FPSLabel.Size = UDim2.new(0, FPSLabel.TextBounds.X+4, 0, 25)
 Main.Size = UDim2.new(0, FPSLabel.TextBounds.X+6, 0, 25)
 
 TopBar.Size = UDim2.new(0, FPSLabel.TextBounds.X+6, 0, 2)
@@ -120,7 +120,7 @@ local function HeartbeatUpdate()
 	FrameUpdateTable[1] = LastIteration
 	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
 FPSLabel.Text = " emperor-ware | V2 | " .. math.floor(CurrentFPS) .." FPS"
-FPSLabel.Size = UDim2.new(0, FPSLabel.TextBounds.X+10, 0, 25)
+FPSLabel.Size = UDim2.new(0, FPSLabel.TextBounds.X+4, 0, 25)
 Main.Size = UDim2.new(0, FPSLabel.TextBounds.X+6, 0, 25)
 
 TopBar.Size = UDim2.new(0, FPSLabel.TextBounds.X+6, 0, 2)
@@ -173,7 +173,7 @@ ScreenGui.Parent = game.CoreGui
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 Frame.ClipsDescendants = true
-Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Position = UDim2.new(0.4, -75, 0.4, -75)
 Frame.Size = UDim2.new(0, 0, 0, 354)
 Frame.Active=true
 Frame.Draggable=true
@@ -260,7 +260,7 @@ TabFolder.Parent = Frame
 		TabLayour.Name = "TabLayour"
 		TabLayour.Parent = TabFrame
 		TabLayour.SortOrder = Enum.SortOrder.LayoutOrder
-		TabLayour.Padding = UDim.new(0, 4)
+		TabLayour.Padding = UDim.new(0, 1)
 
 		UIPadding.Parent = TabFrame
 
@@ -426,7 +426,7 @@ game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear
 wait(0.2)
 SectionDrop.Visible=false
 game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 }):Play()
 else
 	SectionDrop.Visible=true
@@ -439,7 +439,7 @@ game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear
 }):Play()
 wait(0.2)
 game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 }):Play()
 end
 end)
@@ -456,9 +456,11 @@ game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear
 }):Play()
 wait(0.2)
 SectionDrop.Visible=false
+game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
+}):Play()
 else
 	SectionDrop.Visible=true
-TabFrame.CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y)
 on=true
 game.TweenService:Create(ArrowDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 	Rotation=180
@@ -466,10 +468,28 @@ game.TweenService:Create(ArrowDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, 
 game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 	Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
 }):Play()
+wait(0.2)
+game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
+}):Play()
 end
 end)
 
 assets={}
+function assets:Open()
+	SectionDrop.Visible=true
+on=true
+game.TweenService:Create(ArrowDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+	Rotation=180
+}):Play()
+game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+	Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
+}):Play()
+wait(0.2)
+game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+	CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
+}):Play()
+end
 function assets:Button(title, callback)
 
 	local Button = Instance.new("TextButton")
@@ -545,7 +565,7 @@ check.Position = UDim2.new(-0.0909090638, 0, -0.181818187, 0)
 check.Size = UDim2.new(0, 13, 0, 13)
 check.ZIndex = 2
 check.Image = "rbxassetid://3926305904"
-check.ImageColor3 = Color3.fromRGB(255,255,255)
+check.ImageColor3 = Color3.fromRGB(252, 159, 159)
 check.ImageRectOffset = Vector2.new(312, 4)
 check.ImageRectSize = Vector2.new(24, 24)
 check.ImageTransparency=1
@@ -593,7 +613,7 @@ on=false
 do
 if state then
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+		BackgroundColor3 = Color3.fromRGB(224, 87, 87)
 	}):Play()
 	game.TweenService:Create(check, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		ImageTransparency = 0
@@ -621,7 +641,7 @@ on=false
 callback(on)
 else
 	game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		BackgroundColor3 = Color3.fromRGB(135, 135, 135)
+		BackgroundColor3 = Color3.fromRGB(224, 87, 87)
 	}):Play()
 	game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		BackgroundColor3 = Color3.fromRGB(210, 43, 43)
@@ -652,7 +672,7 @@ function control:Click()
 	callback(on)
 	else
 		game.TweenService:Create(OutlineFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-			BackgroundColor3 = Color3.fromRGB(210, 43, 43)
+			BackgroundColor3 = Color3.fromRGB(224, 87, 87)
 		}):Play()
 		game.TweenService:Create(MiddleFrame, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 			BackgroundColor3 = Color3.fromRGB(210, 43, 43)
@@ -759,7 +779,7 @@ if on then
 		Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
 	}):Play()
 	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 	}):Play()
 	on=false
 	Dropdown.Visible=false
@@ -768,7 +788,7 @@ if on then
 	}):Play()
 	wait(0.2)
 	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 	}):Play()
 
 else
@@ -784,21 +804,21 @@ else
 		Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
 	}):Play()
 	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 	}):Play()
 	game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
 	}):Play()
 	wait(0.2)
 	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 	}):Play()
 	on=true
 end
 end)
 count=0
 for i, v in next, list do
-count=count+1
+count=count+4
 	Dropdown.Size=UDim2.new(0, 339,0, UIListLayout.AbsoluteContentSize.Y+4)
 	local DropdownButton = Instance.new("TextButton")
 	local UICorner = Instance.new("UICorner")
@@ -830,17 +850,25 @@ DropdownButton.MouseButton1Click:Connect(function()
 		Size=UDim2.new(0, 339,0, 205)
 	}):Play()
 	wait(0.2)
-	Dropdown_2.Text = title .. ": " ..v
-callback(v)
 	game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
 	}):Play()
 	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+10)
+		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
 	}):Play()
+	on=false
 	Dropdown.Visible=false
-on=false
-
+	Dropdown_2.Text = title .. ": " ..v
+	callback(v)
+	game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+		Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
+	}):Play()
+	wait(0.2)
+	game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+		CanvasSize = UDim2.new(0, 0, 0, TabLayour.AbsoluteContentSize.Y+4)
+	}):Play()
+	Dropdown_2.Text = title .. ": " ..v
+callback(v)
 
 for i,v in pairs(Dropdown:GetChildren()) do
 if v:IsA('TextButton') then
@@ -850,7 +878,7 @@ TextColor3 = Color3.fromRGB(238, 238, 238)
 end
 end
 game.TweenService:Create(DropdownButton,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{
-TextColor3 = Color3.fromRGB(255, 182, 113)
+TextColor3 = Color3.fromRGB(226, 114, 114)
 }):Play()
 end)
 end
