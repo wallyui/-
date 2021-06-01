@@ -119,7 +119,7 @@ local function HeartbeatUpdate()
 
 	FrameUpdateTable[1] = LastIteration
 	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
-FPSLabel.Text = " emperor-ware | V2 | " .. math.floor(CurrentFPS) .." FPS"
+FPSLabel.Text = " Emperor Hub | V2 | " .. math.floor(CurrentFPS) .." FPS"
 FPSLabel.Size = UDim2.new(0, FPSLabel.TextBounds.X+4, 0, 25)
 Main.Size = UDim2.new(0, FPSLabel.TextBounds.X+6, 0, 25)
 
