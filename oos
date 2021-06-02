@@ -180,6 +180,7 @@ Frame.Draggable=true
 game.TweenService:Create(Frame, TweenInfo.new(0.7, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 	Size = UDim2.new(0, 495, 0, 354)
 }):Play()
+on=true
 game:GetService("UserInputService").InputBegan:connect(
     function(key, gpe)
         if key.KeyCode == Enum.KeyCode.LeftAlt then
@@ -187,12 +188,18 @@ if on then
 	game.TweenService:Create(Frame, TweenInfo.new(0.7, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Size = UDim2.new(0, 0, 0, 354)
 	}):Play()
+	wait(0.7)
+	on=not on
+	Frame.Visible=false
 else
 	game.TweenService:Create(Frame, TweenInfo.new(0.7, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Size = UDim2.new(0, 495, 0, 354)
 	}):Play()
+	wait(0.7)
+	Frame.Visible=false
+	on=not on
 end
-on=not on
+
         end
     end
 )
@@ -523,10 +530,11 @@ function assets:Button(title, callback)
 	Button.Size = UDim2.new(0, 339, 0, 24)
 	Button.AutoButtonColor = false
 	Button.Font = Enum.Font.Gotham
-	Button.Text = title
+	Button.Text = "  "..title
 	Button.TextColor3 = Color3.fromRGB(213, 213, 213)
 	Button.TextSize = 14.000
-	
+	Button.TextXAlignment = Enum.TextXAlignment.Left
+
 	UICorner.CornerRadius = UDim.new(0, 2)
 	UICorner.Parent = Button
 
@@ -556,7 +564,7 @@ function assets:Button(title, callback)
 		game.TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 			TextTransparency = 1
 		}):Play()
-		Button.Text = title
+		Button.Text = "  "..title
 	wait(0.2)
 	game.TweenService:Create(Button, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		TextTransparency = 0
