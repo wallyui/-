@@ -192,11 +192,12 @@ if on then
 	on=not on
 	Frame.Visible=false
 else
+	Frame.Visible=true
 	game.TweenService:Create(Frame, TweenInfo.new(0.7, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
 		Size = UDim2.new(0, 495, 0, 354)
 	}):Play()
 	wait(0.7)
-	Frame.Visible=false
+	
 	on=not on
 end
 
@@ -460,7 +461,7 @@ game.TweenService:Create(ArrowDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, 
 	Rotation=180
 }):Play()
 game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-	Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
+	Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+8)
 }):Play()
 wait(0.2)
 game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
@@ -491,7 +492,7 @@ game.TweenService:Create(ArrowDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, 
 	Rotation=180
 }):Play()
 game.TweenService:Create(SectionDrop, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-	Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+3)
+	Size=UDim2.new(0, 339,0, UIListLayoutSec.AbsoluteContentSize.Y+8)
 }):Play()
 wait(0.2)
 game.TweenService:Create(TabFrame, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
