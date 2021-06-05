@@ -991,7 +991,7 @@ function assets:Slider(text, minvalue, maxvalue, callback)
 	SliderAsset.Size = UDim2.new(0, 339, 0, 37)
 	SliderAsset.AutoButtonColor = false
 	SliderAsset.Font = Enum.Font.Gotham
-	SliderAsset.Text = text
+	SliderAsset.Text = " "..text
 	SliderAsset.TextColor3 = Color3.fromRGB(213, 213, 213)
 	SliderAsset.TextSize = 14.000
 	SliderAsset.TextXAlignment = Enum.TextXAlignment.Left
